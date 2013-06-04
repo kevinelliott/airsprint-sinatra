@@ -7,6 +7,6 @@ class MyApp < Sinatra::Application
 
   post '/integrations/:service.?:format?' do
     "Service #{params[:service]}"
-    logger.debug params.inspect
+    logger.warn params.inspect
   end
 end
