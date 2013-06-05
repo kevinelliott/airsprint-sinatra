@@ -38,10 +38,10 @@ Consider this application a base for your own Airbrake to Sprint.ly (or other ta
 
 1.  Set the Heroku production environment variables
 
-        heroku config:set AIRSPRINT_PASSWORD=1234567890
-        heroku config:set SPRINTLY_EMAIL=user@example.com
-        heroku config:set SPRINTLY_API_KEY=ABCDEFGHIJKLMNOPQRSTUVWXYZ
-        heroku config:set SPRINTLY_DEFAULT_PRODUCT_ID=12345
+    `heroku config:set AIRSPRINT_PASSWORD=1234567890`
+    `heroku config:set SPRINTLY_EMAIL=user@example.com`
+    `heroku config:set SPRINTLY_API_KEY=ABCDEFGHIJKLMNOPQRSTUVWXYZ`
+    `heroku config:set SPRINTLY_DEFAULT_PRODUCT_ID=12345`
 
     Sprint.ly `product_id`'s can be passed in each Airbrake WebHook, but it will fall back to the `SPRINTLY_DEFAULT_PRODUCT_ID` if none is provided.
 
