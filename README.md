@@ -22,7 +22,7 @@ Consider this application a base for your own Airbrake to Sprint.ly (or other ta
 
 1. Check out the repository.
 
-`git clone https://github.com/kevinelliott/airsprint-sinatra.git`
+> `git clone https://github.com/kevinelliott/airsprint-sinatra.git`
 
 2. Change into the cloned directory.
 
