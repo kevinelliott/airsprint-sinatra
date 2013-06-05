@@ -1,0 +1,13 @@
+development: &common_settings
+  airbrake:
+    webhook_password: CHOOSE_A_PASSWORD_
+  sprintly:
+    email: PUT_IN_YOUR_SPRINTLY_EMAIL_ADDRESS
+    api_key: PUT_IN_YOUR_SPRINTLY_API_KEY
+    product_id: PUT_IN_YOUR_SPRINTLY_PRODUCT_ID
+
+test:
+  <<: *common_settings
+
+production:
+  <<: *common_settings
