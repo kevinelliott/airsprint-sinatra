@@ -4,7 +4,7 @@ A lightweight Airbrake to Sprint.ly WebHook bridge implemented with Sinatra.
 
 ## About
 
-airsprint-sinatra publishes exceptions received by Airbrake to Sprint.ly. When Airbrake receives exceptions from your application, the WebHook defines on Airbrake is triggered and calls airsprint, which then creates a defect on Sprint.ly using the Sprint.ly REST API. 
+airsprint-sinatra publishes exceptions received by Airbrake to Sprint.ly. When Airbrake receives exceptions from your application, the WebHook defined on Airbrake is triggered and calls airsprint, which then creates a defect on Sprint.ly using the Sprint.ly REST API. 
 
 [Airbrake](http://airbrake.io) is an exception detection and reporting service that can be used with many languages and platforms. I personally use it with Rails by using their `airbrake` gem.
 
