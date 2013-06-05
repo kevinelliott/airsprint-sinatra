@@ -14,7 +14,7 @@ get '/' do
 end
 
 post '/integrations/:service' do
-  airsprint_password  = ENV['AIRSPRINT_PASSWORD'] || (settings.respond_to?(params[:service]) ? settings.send(params[:service])['webhook_password'] : 'NONE PROVIDED')
+  airsprint_password  = ENV['AIRSPRINT_PASSWORD'] || (settings.respond_to?(:airsprint) ? settings.airsprint['webhook_password'] : 'NONE PROVIDED')
   sprintly_email      = ENV['SPRINTLY_EMAIL']     || (settings.respond_to?(:sprintly) ? settings.sprintly['email'] : 'NONE PROVIDED')
   sprintly_api_key    = ENV['SPRINTLY_API_KEY']   || (settings.respond_to?(:sprintly) ? settings.sprintly['api_key'] : 'NONE PROVIDED')
   sprintly_product_id = params[:product_id] || ENV['SPRINTLY_DEFAULT_PRODUCT_ID'] || (settings.respond_to?(:sprintly) ? settings.sprintly['product_id'] : 'NONE PROVIDED')

@@ -1,6 +1,6 @@
 development: &common_settings
-  airbrake:
-    webhook_password: CHOOSE_A_PASSWORD_
+  airsprint:
+    webhook_password: CHOOSE_A_PASSWORD_TO_SECURE_AIRSPRINT
   sprintly:
     email: PUT_IN_YOUR_SPRINTLY_EMAIL_ADDRESS
     api_key: PUT_IN_YOUR_SPRINTLY_API_KEY
