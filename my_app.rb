@@ -14,13 +14,18 @@ get '/' do
 end
 
 post '/integrations/:service' do
-  if INBOUND_SERVICES.include?(params[:service]) && (settings.send(params[:service])['webhook_password'].to_s == params[:password].to_s)
+  airsprint_password  = ENV['AIRSPRINT_PASSWORD'] || settings.send(params[:service])['webhook_password']
+  sprintly_email      = ENV['SPRINTLY_EMAIL']     || settings.sprintly['email']
+  sprintly_api_key    = ENV['SPRINTLY_API_KEY']   || settings.sprintly['api_key']
+  sprintly_product_id = params[:product_id] || ENV['SPRINTLY_DEFAULT_PRODUCT_ID'] || settings.sprintly['product_id']
+
+  if INBOUND_SERVICES.include?(params[:service]) && (airsprint_password == params[:password])
     inbound_data = JSON.parse(request.env["rack.input"].read)
 
     logger.warn "Service #{params[:service]}"
     logger.warn "Inbound Data: #{inbound_data.inspect}"
 
-    sprintly = Integrations::Sprintly.new(settings.sprintly['email'], settings.sprintly['api_key'], settings.sprintly['product_id'])
+    sprintly = Integrations::Sprintly.new(sprintly_email, sprintly_api_key, sprintly_product_id)
     sprintly.logger = logger
 
     error = inbound_data['error']
