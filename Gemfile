@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-gem 'sinatra'
-gem 'sinatra-contrib'
+gem 'sinatra', '>= 2.0.2'
+gem 'sinatra-contrib', '>= 2.0.2'
 gem 'faraday'
-gem 'faraday_middleware'
+gem 'faraday_middleware', '>= 0.12.0'
